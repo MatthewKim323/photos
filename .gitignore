@@ -23,3 +23,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# origin blackout: the source url stays local
+reference/*/.origin.json
+
+# reference captures and placeholder media (not ours to publish)
+reference/
+public/photo-stack/

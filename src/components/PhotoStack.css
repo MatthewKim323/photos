@@ -1,0 +1,88 @@
+.ps-root,
+.ps-root * {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+}
+
+.ps-root {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.ps-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ps-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: oklch(92.8% 0.006 264.531);
+}
+
+.ps-fill {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ps-dock {
+  position: absolute;
+  bottom: -0.25rem;
+  right: 0.75rem;
+  z-index: 5;
+  width: 150px;
+  height: 150px;
+}
+
+.ps-swap {
+  position: relative;
+  perspective: 900px;
+  overflow: visible;
+  transform-style: preserve-3d;
+}
+
+.ps-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 0;
+  background: rgb(0, 0, 0);
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.ps-edge {
+  position: absolute;
+  inset: -2rem;
+  z-index: 20;
+  pointer-events: none;
+  display: none;
+}
+
+.ps-edge canvas {
+  display: block;
+  vertical-align: middle;
+}
+
+@media (min-width: 48rem) {
+  .ps-dock {
+    width: 290px;
+    height: 290px;
+  }
+
+  .ps-edge {
+    display: block;
+  }
+}
